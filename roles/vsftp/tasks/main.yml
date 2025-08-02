@@ -1,0 +1,68 @@
+---   
+- name: install ssh 
+  apt:
+    name: ssh
+    state: present
+
+- name: install sftp
+  apt:
+    name: sftp
+    state: present
+  ignore_errors: true
+
+- name: create group
+  group:
+    name: sftp
+    state: present
+      
+- name: Create user 'roy'
+  user:
+    name: roy
+    groups: sftp
+    shell: /bin/bash
+    create_home: yes
+    password: "{{ '123456789' | password_hash('sha512') }}"
+
+
+- name: create sftp root directory
+  file:
+    path: /var/sftp
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create user files directory
+  file:
+    path: /var/sftp/Files
+    state: directory
+    owner: roy
+    group: sftp
+    mode: '0755'
+
+    
+- name: Configure sshd_config
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    marker: "# {mark} ANSIBLE MANAGED BLOCK FOR SFTP"
+    block: |
+      Match group sftp
+          ChrootDirectory /var/sftp
+          ForceCommand internal-sftp
+          X11Forwarding no
+          AllowTcpForwarding no
+          AllowAgentForwarding no
+  notify: Restart sshd
+
+
+- name: enable ufw
+  community.general.ufw:
+    state: enabled
+    policy: allow
+
+- name: Allow FTP (port 21)
+  community.general.ufw:
+    rule: allow
+    port: 21
+    proto: tcp
+

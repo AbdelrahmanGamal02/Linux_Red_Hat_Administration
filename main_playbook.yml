@@ -1,0 +1,7 @@
+---
+- name: install and configure vsftp
+  hosts: cli3.xyz.loc
+  become: yes
+
+  roles:
+    - vsftp
