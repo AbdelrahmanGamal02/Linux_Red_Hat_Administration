@@ -1,6 +1,6 @@
 # Linux Red Hat Administration Diploma
 
-This repository documents my journey and key learnings during the completion of the **Linux Red Hat Administration Diploma**. The program included both **technical training** and **soft skills development**, providing a strong foundation for working in Linux system administration, DevOps, and automation roles.
+This repository documents my journey and key learnings during the completion of the **Linux Red Hat Administration Diploma** with NTI. The program included both **technical training** and **soft skills development**, providing a strong foundation for working in Linux system administration, DevOps, and automation roles.
 
 ---
 
@@ -57,7 +57,7 @@ Deliverables included:
 - CV writing and personal branding
 - Leadership and teamwork
 - Conflict resolution and negotiation
-- Problem-solving under pressure
+- Problem-solving
 
 ---
 
@@ -68,16 +68,3 @@ This program helped me strengthen both the **technical competencies** required f
 I am now better equipped to contribute to real-world projects in **Linux Administration**, **Infrastructure Automation**, and **DevOps** environments.
 
 ---
-
-## 🔗 Connect with Me
-
-Feel free to reach out or connect:
-
-- [LinkedIn](https://www.linkedin.com/in/your-profile)
-- [Email](mailto:your.email@example.com)
-
----
-
-## 📜 License
-
-This repository and its contents are shared for educational and portfolio purposes. Please do not reuse code or documents without attribution.
